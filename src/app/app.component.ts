@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BoardComponent } from "./board/board.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [BoardComponent],
   template: `
     <h1>Welcome to {{title}}!</h1>
 
-    <router-outlet />
+    <app-board></app-board>
   `,
   styles: [],
 })
