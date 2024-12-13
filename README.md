@@ -1,60 +1,28 @@
 # TicTacToe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+This project has been built with LM Studio using Qwen2.5 model.
 
-## Development server
+Here is my first prompt : Can you build a tic tact oe game with Angular framework. You must split domain part in service files, and presentation part in components. The game must the beautiful.
+The result was already working but not looks like as expected about code.
 
-To start a local development server, run:
+Here is my second prompt : peux tu corriger le code du template pour utiliser le nouveau control flow : @for au lieu du ngFor
+I moved on french... The result was not working because it did a mistake about @for syntax, using let keyword whereas it's forbidden. I fixed it and send it the correction. It will never do the mistake again
 
-```bash
-ng serve
-```
+Here is my third prompt : Il manque par contre le calcul du gagnant. Je veux donc que dès qu'il y a un gagnant, le jeu s'arrete.
+Un joueur est déclaré gagnant lorsqu'il a 3 cases cotes à cotes cochés. C'est à dire 3 verticales, 3 horizontales, ou 3 en diagonales.
+And now, it manages the winner declaration.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Here is my fourth prompt : 1. il manque aussi la détection d'une partie nulle. Si aucun gagnant n'est déclaré à la fin de la partie, tu dois indiquer que personne n'a gagné
+2. il faudrait que la condition qui permet de déterminer si on doit ajouter la classe css winning soit externalisé dans une méthode du composant qui s'appelerai hasAWinner
+3. il faut tester le service et le composant
+The draw game is now managed. I also have tests, but they are buggy. I have to fix them, but it's quite easy.
 
-## Code scaffolding
+I'm almost satisfied by this first try.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Here is my setup :
+* Laptop Rizen 7 6800H
+* RTX 3070 8G
+* 16Gb RAM
+* SSD
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# tic-tact-toe
+It's almost loudy when the LLM is working, but it's quite fast to generate the response
